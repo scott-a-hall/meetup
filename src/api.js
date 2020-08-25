@@ -1,8 +1,7 @@
 import { mockEvents } from "./mock-events";
 import axios from 'axios';
-import { getAccessToken } from "../auth-server/handler";
 
-getAccessToken(() => {
+function getAccessToken() {
     const accessToken = localStorage.getItem('access_token');
     if (!accessToken) {
         const searchParams = new URLSearchParams(window.location.search);
@@ -24,7 +23,7 @@ getAccessToken(() => {
     //If the access_token is expired, we try to renew it by using refresh_token
     const refreshToken = localStorage.getItem('refresh_token');
     return getOrRenewAccessToken('renew', refreshToken);
-});
+};
 
 async function getOrRenewAccessToken(type, key) {
     let url;
