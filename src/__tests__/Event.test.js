@@ -6,46 +6,49 @@ describe('<Event /> component', () => {
     let EventWrapper;
     beforeAll(() => {
         const event = {
-            created: 1586376490000,
-            duration: 7200000,
-            id: "269936360",
-            name: "C# and .NET for Object-Oriented Programmers - Jort Rodenburg",
+            created: 1591348394000,
+            duration: 385200000,
+            id: '271099242',
+            name: 'International JavaScript Conference Munich 2020 - The Hybrid Conference',
             date_in_series_pattern: false,
-            status: "upcoming",
-            time: 1600383600000,
-            local_date: "2020-09-17",
-            local_time: "18:00",
-            updated: 1594240846000,
-            utc_offset: -18000000,
+            status: 'upcoming',
+            time: 1603695600000,
+            local_date: '2020-10-26',
+            local_time: '08:00',
+            updated: 1597742159000,
+            utc_offset: 3600000,
             waitlist_count: 0,
-            yes_rsvp_count: 61,
+            yes_rsvp_count: 13,
             venue: {
-                id: 26906060,
-                name: "Online event",
-                repinne: true,
-                country: "",
-                localized_country_name: ""
+                id: 26495814,
+                name: 'Holiday Inn München - Stadtzentrum',
+                lat: 48.13063049316406,
+                lon: 11.589532852172852,
+                repinned: true,
+                address_1: 'Hochstraße 3',
+                city: 'München',
+                country: 'de',
+                localized_country_name: 'Germany'
             },
-            is_online_event: true,
+            is_online_event: false,
             group: {
-                created: 1360593318000,
-                name: "Nashville Software Beginners",
-                id: 7130232,
-                join_mode: "open",
-                lat: 36.13999938964844,
-                lon: -86.73999786376953,
-                urlname: "nashville-software-beginners",
-                who: "devs",
-                localized_location: "Nashville, TN",
-                state: "TN",
-                country: "us",
-                region: "en_US",
-                timezone: "US/Central"
+                created: 1497515784000,
+                name: 'International JavaScript Conference',
+                id: 24474394,
+                join_mode: 'approval',
+                lat: 48.13999938964844,
+                lon: 11.579999923706055,
+                urlname: 'International-JavaScript-Conference',
+                who: 'Mitglieder',
+                localized_location: 'München, Germany',
+                state: '',
+                country: 'de',
+                region: 'en_US',
+                timezone: 'Europe/Berlin'
             },
-            link: "https://www.meetup.com/nashville-software-beginners/events/269936360/",
-            description: "<p>Moving to a new language can be both daunting and exciting, but one big hurdle often stands in your way: there are no intermediate resources out there. Everything is either “Learn programming by using language X”, or “Obscure Features explained: An academic dive into language X”. This is the answer. You already have experience in an object-oriented language, so why cover what an object is? or what polymorphism is? This talk goes into what clean, idiomatic C# is and how to write it. You will learn the pros and cons of C# and .NET, what it does better than another language, and how it is compiled. We even look at some Intermediate Language! The talk assumes experience in Object-Oriented Programming (Java, Kotlin, etc) and high-school mathematics. Programmers with experience in other languages such as Go, JavaScript, C++, and Python will still find this talk informative.</p> <p>Jort Rodenburg is a software engineer and author specializing in C#. He has worked on software in a variety of fields, such as financial compliance and reporting, inkjet printing, and medical imaging. Jort has mentored and taught courses on object-oriented programming for developers proficient in a different programming language to help them get up to speed with C# and .NET. Jort is the author of “Code Like a Pro in C#”, published by Manning.</p> ",
-            how_to_find_us: "https://asurion.zoom.us/j/94956824228",
-            visibility: "public",
+            link: 'https://www.meetup.com/International-JavaScript-Conference/events/271099242/',
+            description: '<p>Every year in October, International JavaScript Conference Munich is where seasoned experts get together to discuss methods, libraries, services, models and algorithms to use. Keeping the current situation in mind, we announce that iJS Munich 2020 will be a Hybrid Conference - attend the conference on site or remotely from your home or office.</p> <p>We are looking forward to meeting you this year as well!</p> ',
+            visibility: 'public',
             member_pay_fee: false
         };
 
@@ -90,7 +93,7 @@ describe('<Event /> component', () => {
 
     test('render mock data correctly', () => {
         expect(EventWrapper.find('.event-name').text()).toBe(
-            "C# and .NET for Object-Oriented Programmers - Jort Rodenburg"
+            "International JavaScript Conference Munich 2020 - The Hybrid Conference"
         );
     });
 });
