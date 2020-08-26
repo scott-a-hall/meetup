@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function getAccessToken() {
     const accessToken = localStorage.getItem('access_token');
+
     if (!accessToken) {
         const searchParams = new URLSearchParams(window.location.search);
         const code = searchParams.get('code');
@@ -76,7 +77,8 @@ async function getSuggestions(query) {
     if (token) {
         const url = 'https://api.meetup.com/find/locations?&sign=true&photo-host=public&query='
             + query
-            + '&access_token=' + token;
+            + '&access_token='
+            + token;
         const result = await axios.get(url);
         return result.data;
     }
@@ -91,7 +93,8 @@ async function getEvents(lat, lon) {
     const token = await getAccessToken();
     if (token) {
         let url = 'https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public'
-            + '&access_token=' + token;
+            + '&access_token='
+            + token;
         //lat, lon is optional; if you have a lat and lon you can add them
         if (lat && lon) {
             url += '&lat=' + lat + '&lon=' + lon;
