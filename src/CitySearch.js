@@ -18,8 +18,6 @@ class CitySearch extends Component {
         this.props.updateEvents(lat, lon);
     }
 
-    componentDidMount() { };
-
     render() {
         return (
             <div className="CitySearch">
