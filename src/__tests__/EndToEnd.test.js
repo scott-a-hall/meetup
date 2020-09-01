@@ -2,9 +2,11 @@ import puppeteer from 'puppeteer';
 
 describe('show/hide an event details', () => {
     test('an event element is collapsed by default', async () => {
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        });
         const page = await browser.newPage();
-        await page.goto('http://localhost:3000/');
+        await page.goto('http://localhost:3000');
 
         await page.waitForSelector('.Event');
 
@@ -12,4 +14,4 @@ describe('show/hide an event details', () => {
         expect(extra).toBeNull();
         browser.close();
     });
-});
+})
