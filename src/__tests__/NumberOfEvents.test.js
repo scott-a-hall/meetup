@@ -6,7 +6,7 @@ import NumberOfEvents from '../NumberOfEvents';
 describe('<NumberOfEvents /> component', () => {
     let NumberOfEventsWrapper;
     beforeAll(() => {
-        NumberOfEventsWrapper = shallow(<NumberOfEvents />);
+        NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={() => { }} />);
     });
 
     test('render text input', () => {
@@ -27,12 +27,12 @@ describe('<NumberOfEvents /> component', () => {
 
 describe('<NumberOfEvents /> integration', () => {
     test('set default number of events to 32', () => {
-        const NumberOfEventsWrapper = shallow(<NumberOfEvents />);
+        const NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={() => { }} />);
         NumberOfEventsWrapper.update();
         expect((NumberOfEventsWrapper.find('.event')).length).toBeLessThanOrEqual(32);
     });
     test('user can change number of events', () => {
-        const NumberOfEventsWrapper = mount(<NumberOfEvents />);
+        const NumberOfEventsWrapper = mount(<NumberOfEvents updateEvents={() => { }} />);
         const eventNumber = { target: { value: 12 } };
         NumberOfEventsWrapper.find('.events').simulate('change', eventNumber);
         NumberOfEventsWrapper.setState({ numberOfEvents: 12 });

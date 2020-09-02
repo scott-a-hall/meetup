@@ -11,11 +11,12 @@ class App extends Component {
     events: [],
     page: null,
     lat: null,
-    lon: null
+    lon: null,
+    is_mounted: false
   }
 
   componentDidMount() {
-    getEvents().then(response => this.setState({ events: response }));
+    this.is_mounted = true;
   }
 
   updateEvents = (lat, lon, page) => {
@@ -26,6 +27,10 @@ class App extends Component {
     } else {
       getEvents(this.state.lat, this.state.lon, this.state.page).then(response => this.setState({ events: response }));
     }
+  }
+
+  componentWillUnmount() {
+    this.is_mounted = false;
   }
 
   render() {

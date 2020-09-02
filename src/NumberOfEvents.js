@@ -5,6 +5,7 @@ class NumberOfEvents extends Component {
         events: 32
     }
 
+
     handleInputChanged = (event) => {
         const value = event.target.value;
         this.setState({ events: value });
