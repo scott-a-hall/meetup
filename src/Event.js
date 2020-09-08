@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { PieChart, Pie, Tooltip, ResponsiveContainer } from 'recharts';
 
 class Event extends Component {
     state = {
@@ -15,10 +14,6 @@ class Event extends Component {
     };
 
     render() {
-        const showDetails = this.state.showDetails;
-        const event = this.props.event;
-        const rsvpData = [{ name: "people coming", value: event.yes_rsvp_count }, { name: "available slots", value: (event.rsvp_limit - event.yes_rsvp_count) }];
-
         return (
             <div className="Event">
                 <div className="event-overview">
@@ -31,19 +26,6 @@ class Event extends Component {
                         Show Details
                     </button>
                 </div>
-                {event.rsvp_limit &&
-                    <ResponsiveContainer height={300} width={350}>
-                        <PieChart>
-                            <Pie data={rsvpData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8">
-
-                            </Pie>
-
-                            <Tooltip />
-                        </PieChart>
-                    </ResponsiveContainer>
-                }
-                {!event.rsvp_limit &&
-                    <p>{event.yes_rsvp_count} people coming</p>}
                 {this.state.showDetails && (
                     <div className="event-details">
                         <p className="event-description">
