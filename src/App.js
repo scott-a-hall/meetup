@@ -44,9 +44,9 @@ class App extends Component {
     return (
       <div className="App">
         <CitySearch updateEvents={this.updateEvents} />
+        <OfflineAlert text={this.state.offlineText} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
-        <OfflineAlert text={this.state.offlineText} />
       </div>
     );
   }
